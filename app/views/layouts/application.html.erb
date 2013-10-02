@@ -8,8 +8,11 @@
 </head>
 <body>
 
-<%= render 'layouts/nav' %>
-<%= yield %>
+<%= render 'layouts/shared/nav' %>
+
+<div class="container container-downshift">
+	<%= yield %>
+</div>
 
 </body>
 </html>
