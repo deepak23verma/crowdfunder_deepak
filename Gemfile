@@ -8,6 +8,7 @@ gem 'rails', '3.2.14'
 # gem 'sqlite3'
 
 	gem 'pg' #replacing SQlite w/ PostgreSQL
+	gem 'sorcery'
 
 
 # Gems used only for assets and not required
