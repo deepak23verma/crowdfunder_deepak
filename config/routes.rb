@@ -1,4 +1,7 @@
 Crowdfunder::Application.routes.draw do
+  get "/projects" => "projects#index", as: "projects"
+  get "/projects/:id" => "projects#show", as: "project"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
