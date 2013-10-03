@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   attr_accessible :first_name, :last_name, :email, :password
   has_many :projects
 
-  validates :first_name, :last_name, :email, :password, :presence => true
+  validates :first_name, :last_name, :password, :presence => true
+  validates :email, uniqueness: {case_sensitive: false}
   # attr_accessible :title, :body
 end

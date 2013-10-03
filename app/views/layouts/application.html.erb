@@ -8,19 +8,19 @@
 </head>
 <body>
 
-<%= render 'layouts/shared/nav' %>
+	<%= render 'layouts/shared/nav' %>
 
-<div class="container container-downshift">
-	<% if flash[:notice] %>
-	<p><%= flash[:notice] %></p>
-<% end %>
-
-<% if flash[:alert] %>
-	<p><%= flash[:alert] %></p>
-<% end %>
-	<%#= render 'layouts/shared/flash' %>
-	<%= yield %>
-</div>
+	<div class="container container-downshift">
+		<% if flash[:notice] %>
+		<p><%= flash[:notice] %></p>
+	<% end %>
+	<% if flash[:alert] %>
+		<p><%= flash[:alert] %></p>
+	<% end %>
+		<%#= render 'layouts/shared/flash' %>
+		
+		<%= yield %>
+	</div>
 
 </body>
 </html>
