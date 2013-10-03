@@ -10,7 +10,7 @@ describe "User Authentication" do
 
       # expect there is a link to a nav to Sign Up
       within(:css, '.navbar') do
-      	find_link("Sign Up").visible?
+      	find_link("Sign up").visible?
       end
 
       user = FactoryGirl.build(:user)
@@ -28,7 +28,7 @@ describe "User Authentication" do
       expect(page).to have_content("Account created")
       # And the nav no longer has a link to a Sign Up but Logout
       within(:css, '.navbar') do
-      	has_no_link?('Sign Up')
+      	has_no_link?('Sign up')
       	has_link?('Logout')
       end
     end

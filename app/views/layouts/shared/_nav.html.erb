@@ -11,6 +11,15 @@
 						<%= link_to 'Projects', :projects %>
 					</li>
 				</ul>
+				<div class="pull-right">
+					<% if current_user %>
+						Logged in as <%= current_user.email %>
+						<%= link_to 'Logout', "#", class: 'btn' %>
+					<% else %>
+						<%= link_to 'Sign up', new_user_path, class: 'btn btn-primary' %>
+						<%= link_to 'Log in', login_path, class: 'btn' %>
+					<% end %>
+				</div>
 			</div>
 		</div>
 	</div>

@@ -4,6 +4,13 @@ Crowdfunder::Application.routes.draw do
   get "/projects" => "projects#index", as: "projects"
   get "/projects/:id" => "projects#show", as: "project"
 
+  resources :users, except: :index
+  resources :sessions
+
+  get "logout" => "sessions#destroy", :as => "logout"
+  get "login" => "sessions#new", :as => "login"
+  get "signup" => "users#new", :as => "signup"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
