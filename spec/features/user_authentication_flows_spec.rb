@@ -44,6 +44,10 @@ describe "User Authentication" do
     	expect(current_path).to eq(users_path)
     	#... no message saying "Account created" should appear
     	expect(page).to have_no_content("Account created")
+
+    	within(:css, '.alert') do
+    		have_content("Please try again")
+    	end
     end
   end
 end

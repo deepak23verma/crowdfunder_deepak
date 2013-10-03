@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 			auto_login(@user)
 			redirect_to root_url, :notice => "Account created"
 		else
-			render :new, :alert => "Invalid email or password"
+			render :new, :alert => "Please try again"
 		end
 
 	end

@@ -15,10 +15,10 @@
 		<p><%= flash[:notice] %></p>
 	<% end %>
 	<% if flash[:alert] %>
-		<p><%= flash[:alert] %></p>
+		<div><%= flash[:alert] %></div>
 	<% end %>
 		<%#= render 'layouts/shared/flash' %>
-		
+
 		<%= yield %>
 	</div>
 
