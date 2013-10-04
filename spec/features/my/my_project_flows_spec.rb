@@ -32,5 +32,31 @@ describe "Project Listing" do
     	expect(page).to have_content("It is really my project")
     end
 
+    it "shoud not be able to edit someone else's project" do
+    	me = setup_signed_in_user
+
+    	other_user = FactoryGirl.create :user
+    	project = FactoryGirl.create :project, user: other_user, title: "Other Dude's Project"
+
+    	expect { visit edit_my_project_path(project) }.to raise_error
+    end
+
+    it "should make projects public" do
+    	me = setup_signed_in_user
+    	# If we don't specify a user, it will meedlessly CREATE a new one
+    	project = FactoryGirl.build(:project, user: me)
+
+    	visit 'my/projects/new/'
+
+    	fill_in 'project[title]', with: "Test Project"
+    	fill_in 'project[teaser]', with: "Test Project Teaser"
+    	fill_in 'project[description]', with: "Test Project Description"
+    	fill_in 'project[goal]', with: "12000"
+    	
+    	click_button 'Publish Project'
+
+    	expect(current_path).to eq(my_projects_path)
+    end
+
   end
 end
