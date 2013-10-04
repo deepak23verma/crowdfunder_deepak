@@ -1,0 +1,8 @@
+<h1>Pledge Support For: <%= @project.title %></h1>
+
+<%= form_for [@project, @pledge] do |f| %>
+	<%= f.label :amount %>
+	<%= f.number_field :amount, autofocus: true %>
+	<br/>
+	<%= f.submit "Pledge Now" %>
+<% end %>
