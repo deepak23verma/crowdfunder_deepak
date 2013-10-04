@@ -7,14 +7,14 @@ class SessionsController < ApplicationController
 		if @user = login(params[:email], params[:password])
 			redirect_back_or_to(root_path, :notice => 'Login Successful')
 		else
-			flash.now.alert = "Email or password was invalid" 
+			flash.now.alert = "Invalid email or password" 
 			render :new
 		end
 	end
 
 	def destroy
 		logout
-		redirect_to root_url, :notice => "Logged out!"
+		redirect_to root_url, :notice => "Successfully logged out!"
 	end
 
 end
