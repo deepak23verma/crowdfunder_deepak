@@ -1,0 +1,8 @@
+<h1>Edit Project</h1>
+
+<%= form_for [:my, @project] do |f| %>
+	<%= f.label :title, autofocus: true %>
+	<%= f.text_field :title %>
+	<br/>
+	<%= f.submit "Update Project" %>
+<% end %>

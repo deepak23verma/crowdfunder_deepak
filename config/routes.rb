@@ -15,6 +15,10 @@ Crowdfunder::Application.routes.draw do
   get "login" => "sessions#new", :as => "login"
   get "signup" => "users#new", :as => "signup"
 
+  namespace :my do
+    resources :projects # => My::ProjectsController
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
