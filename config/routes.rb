@@ -4,6 +4,10 @@ Crowdfunder::Application.routes.draw do
   get "/projects" => "projects#index", as: "projects"
   get "/projects/:id" => "projects#show", as: "project"
 
+  resources :projects, only: [:index, :show] do
+    resources :pledges, only: [:new, :create]
+  end
+
   resources :users, except: :index
   resources :sessions
 
