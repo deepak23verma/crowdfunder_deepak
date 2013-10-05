@@ -57,6 +57,5 @@ describe "Project Listing" do
 
     	expect(current_path).to eq(my_projects_path)
     end
-
   end
 end

@@ -1,0 +1,30 @@
+<h1>New Project</h1>
+
+<%= form_for [:my, @project] do |f| %>
+	
+	<% unless f.object.errors.empty? %>
+		<div class="alert alert-error">
+			<strong>Try again after fixing the following things:</strong><br/>
+			<ul>
+				<% f.object.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+
+	<%= f.label :title %>
+	<%= f.text_field :title, autofocus: true %>
+
+	<%= f.label :teaser %>
+	<%= f.text_field :teaser %>
+
+	<%= f.label :description %>
+	<%= f.text_area :description %>
+
+	<%= f.label :goal %>
+	<%= f.number_field :goal %>
+	<br/>
+	<%= f.submit "Publish Project" %>
+
+<% end %>
