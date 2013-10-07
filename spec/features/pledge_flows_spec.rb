@@ -45,5 +45,9 @@ describe "Pledge Listing" do
     	pledge.amount.should == 100
     	expect(pledge.amount).to eq(100)
     end
+
+    it "should let an authenticated user pledge a valid amount" do
+        expect(last_email.to).to eq([@project.user.email])
+    end
   end
 end

@@ -34,7 +34,8 @@ group :development do
 	gem 'rspec-rails', '~> 2.0' # using rspec instead of test unit
 	gem 'better_errors' #makes the errors w see in the browser more descriptive
 	gem "binding_of_caller"
-	gem 'pry-rails'
+	gem 'pry-rails' # <% binding.pry %>
+	gem 'letter_opener'
 end
 
 group :test do
